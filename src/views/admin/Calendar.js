@@ -6,7 +6,7 @@ import "moment/locale/es";
 const localizer = momentLocalizer(moment);
 
 export default function EventsCalendar() {
-  const [events, setEvents] = useState([
+  const [events] = useState([
     {
       start: moment().toDate(),
       end: moment().toDate(),

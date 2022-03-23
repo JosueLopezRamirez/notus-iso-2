@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import CardTable from "components/Cards/CardTable.js";
 import Grid from "components/Grid";
 
 const columnDefs = [

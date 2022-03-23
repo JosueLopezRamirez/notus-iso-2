@@ -6,15 +6,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "components/Input";
 import axios from "axios";
-import { debounce } from "lodash";
 
 const schema = yup
   .object({
     email: yup.string().email().required(),
     password: yup
       .string()
-      .min(6, "contrasenia muy corta!")
-      .max(50, "contrasenia muy larga!")
+      .min(6, "contraseña muy corta!")
+      .max(50, "contraseña muy larga!")
       .required(),
   })
   .required();

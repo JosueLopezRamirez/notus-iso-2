@@ -36,7 +36,7 @@ const selectionColDef = {
 export default forwardRef(({ rowData, columnDefs, ...props }, ref) => {
   const [gridApi, setGridApi] = useState();
   const [file, setFile] = useState();
-  const [columnApi, setColumnApi] = useState();
+  const [, setColumnApi] = useState();
   const importRef = useRef(null);
 
   const defaultColDef = useMemo(
@@ -157,7 +157,7 @@ export default forwardRef(({ rowData, columnDefs, ...props }, ref) => {
         icon: <FileDownloadIcon />,
       },
     ],
-    [props.onSave, columnDefs, gridApi]
+    [props.onSave, gridApi]
   );
 
   const statusBar = {
@@ -175,7 +175,7 @@ export default forwardRef(({ rowData, columnDefs, ...props }, ref) => {
       colDefs.push(removeRowColDef);
     }
     return colDefs;
-  }, [columnDefs]);
+  }, [columnDefs, props.removeRow]);
 
   return (
     <div
