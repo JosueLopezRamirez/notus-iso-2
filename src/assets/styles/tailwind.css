@@ -2375,10 +2375,6 @@ select {
     width: auto;
   }
 
-  .lg\:w-2\/4 {
-    width: 50%;
-  }
-
   .lg\:flex-row {
     flex-direction: row;
   }

@@ -1,17 +1,19 @@
-import Input from "components/Input";
-import TextArea from "components/Input/TextArea";
 import React from "react";
 import { Controller } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import Select from "react-select";
+import ReactDatePicker from "react-datepicker";
+import Input from "components/Input";
+import TextArea from "components/Input/TextArea";
 
 const sizes = {
-  middle: "6/12",
-  small: "3/6 flex-1",
+  middle: "50%",
+  small: "33.33%",
+  verySmall: "25%",
 };
 
 const customStyles = {
-  control: () => ({ height: 44, display: 'flex' }),
+  control: () => ({ height: 44, display: "flex" }),
 };
 
 export const Section = ({
@@ -30,6 +32,7 @@ export const Section = ({
             register={register}
             name={field.name}
             required={field.required}
+            error={errors[field.name]?.message}
           />
         );
       case "textarea":
@@ -39,6 +42,7 @@ export const Section = ({
             register={register}
             name={field.name}
             required={field.required}
+            error={errors[field.name]?.message}
           />
         );
       case "select":
@@ -64,6 +68,29 @@ export const Section = ({
             <ErrorMessage errors={errors} name={field.name} />
           </>
         );
+      case "date":
+        return (
+          <>
+            <label className="block uppercase text-slate-600 text-xs font-bold mb-2">
+              {field.label}
+            </label>
+            <Controller
+              name={field.name}
+              control={control}
+              render={({ field: { onChange, onBlur, value } }) => {
+                return (
+                  <ReactDatePicker
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    selected={value}
+                    className="border-0 h-[44px] placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  />
+                );
+              }}
+            />
+            <ErrorMessage errors={errors} name={field.name} />
+          </>
+        );
       default:
         return <></>;
     }
@@ -78,7 +105,8 @@ export const Section = ({
         <div className="flex flex-wrap">
           {fields.map((field) => (
             <div
-              className={`w-${field.size ? sizes[field.size] : "full"} pr-4`}
+              className="pr-4"
+              style={{ width: field.size ? sizes[field.size] : "100%" }}
             >
               <div className="relative w-full mb-3">{renderField(field)}</div>
             </div>

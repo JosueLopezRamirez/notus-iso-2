@@ -1,87 +1,94 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Section } from "components/Section";
 import { useForm } from "react-hook-form";
 import { FormWrapper } from "components/Form/FormWrapper";
 import CardHeader from "./CardHeader";
 import Card from "./Card";
 import CardBody from "./CardBody";
-// components
 
 const formFields = [
   {
-    title: "User Information",
+    title: "Informacion personal",
     fields: [
       {
         name: "username",
         type: "text",
         size: "middle",
-        label: "Username",
+        label: "Nombre de usuario",
         required: true,
       },
       {
         name: "email",
         type: "text",
         size: "middle",
-        label: "Email address",
+        label: "Correo electronico",
         required: true,
       },
       {
         name: "name",
         type: "text",
         size: "middle",
-        label: "First Name",
+        label: "Nombre",
         required: true,
       },
       {
         name: "lastname",
         type: "text",
         size: "middle",
-        label: "Last Name",
+        label: "Apellido",
         required: true,
       },
     ],
     separator: true,
   },
   {
-    title: "CONTACT INFORMATION",
+    title: "Informacion de Contacto",
     fields: [
       {
         name: "address",
         type: "text",
-        label: "Address",
+        size: "middle",
+        label: "Direccion",
         required: true,
       },
       {
         name: "city",
         type: "text",
-        size: "small",
-        label: "City",
+        size: "middle",
+        label: "Ciudad",
         required: true,
       },
       {
         name: "country",
         type: "select",
         size: "small",
-        label: "country",
+        label: "Pais",
         required: true,
       },
       {
         name: "postalCode",
         type: "text",
         size: "small",
-        label: "Postal code",
+        label: "Codigo postal",
+        required: true,
+      },
+      {
+        name: "createdAt",
+        type: "date",
+        size: "small",
+        label: "Fecha de creacion",
         required: true,
       },
     ],
     separator: true,
   },
   {
-    title: "About Me",
+    title: "Informacion Adicional",
     fields: [
       {
         name: "aboutme",
         type: "textarea",
-        label: "About me",
+        label: "Acerca de",
         required: true,
       },
     ],
@@ -102,21 +109,19 @@ export default function CardSettings() {
 
   const onSubmit = (data) => console.log("data", data);
   return (
-    <>
-      <Card>
-        <CardHeader title="Mi Cuenta" />
-        <CardBody>
-          <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-            <Section
-              register={register}
-              formFields={formFields}
-              control={control}
-              errors={errors}
-              dropdownOptions={dropdownOptions}
-            />
-          </FormWrapper>
-        </CardBody>
-      </Card>
-    </>
+    <Card>
+      <CardHeader title="Mi Cuenta" />
+      <CardBody>
+        <FormWrapper onSubmit={handleSubmit(onSubmit)}>
+          <Section
+            register={register}
+            formFields={formFields}
+            control={control}
+            errors={errors}
+            dropdownOptions={dropdownOptions}
+          />
+        </FormWrapper>
+      </CardBody>
+    </Card>
   );
 }
