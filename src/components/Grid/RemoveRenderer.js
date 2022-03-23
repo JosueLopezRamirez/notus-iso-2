@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
+import CloseIcon from "@mui/icons-material/Close";
 
 export const RemoveRenderer = (props) => {
   const onClick = () => {
@@ -9,7 +9,7 @@ export const RemoveRenderer = (props) => {
   return (
     <div className="flex items-center justify-center w-full h-full">
       <button onClick={onClick}>
-        <DeleteIcon />
+        <CloseIcon />
       </button>
     </div>
   );

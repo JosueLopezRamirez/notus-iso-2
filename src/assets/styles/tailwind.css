@@ -955,16 +955,16 @@ select {
   margin-top: 5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
 
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mr-0 {
@@ -1051,8 +1051,8 @@ select {
   height: 600px;
 }
 
-.h-5 {
-  height: 1.25rem;
+.h-\[44px\] {
+  height: 44px;
 }
 
 .max-h-860-px {
@@ -1069,14 +1069,6 @@ select {
 
 .min-h-screen-75 {
   min-height: 75vh;
-}
-
-.min-h-\[500px\] {
-  min-height: 500px;
-}
-
-.min-h-\[450px\] {
-  min-height: 450px;
 }
 
 .min-h-\[400px\] {
@@ -1113,10 +1105,6 @@ select {
 
 .w-6\/12 {
   width: 50%;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-1\/2 {
@@ -1934,6 +1922,11 @@ select {
   color: rgb(244 114 182 / var(--tw-text-opacity));
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2014,6 +2007,10 @@ select {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all {
@@ -2169,14 +2166,6 @@ select {
 
   .md\:mt-64 {
     margin-top: 16rem;
-  }
-
-  .md\:mt-4 {
-    margin-top: 1rem;
-  }
-
-  .md\:mb-4 {
-    margin-bottom: 1rem;
   }
 
   .md\:block {
@@ -2384,10 +2373,6 @@ select {
 
   .lg\:w-auto {
     width: auto;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:w-2\/4 {

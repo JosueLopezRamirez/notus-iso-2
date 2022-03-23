@@ -8,7 +8,7 @@ export default function Settings() {
   return (
     <>
       <div className="flex flex-wrap">
-        <div className="w-full lg:w-2/4 px-4">
+        <div className="w-full px-4">
           <CardSettings />
         </div>
       </div>

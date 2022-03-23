@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useToasts } from 'react-toast-notifications';
+import { Link, useHistory } from "react-router-dom";
+import { useToasts } from "react-toast-notifications";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "components/Input";
 import axios from "axios";
+import { debounce } from "lodash";
 
 const schema = yup
   .object({
@@ -19,7 +20,8 @@ const schema = yup
   .required();
 
 export default function Login() {
-  const { addToast }  = useToasts();
+  const { addToast } = useToasts();
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -34,9 +36,13 @@ export default function Login() {
         "http://localhost:5000/users/login",
         data
       );
-      addToast(result.data.message, { appearance: 'success' })
+      localStorage.setItem("isLogged", true);
+      addToast(result.data.message, { appearance: "success" });
+      setTimeout(() => {
+        history.push("/admin");
+      }, 500);
     } catch (error) {
-      addToast(error.response.data.message, { appearance: 'error' });
+      addToast(error.response.data.message, { appearance: "error" });
     }
   };
 
