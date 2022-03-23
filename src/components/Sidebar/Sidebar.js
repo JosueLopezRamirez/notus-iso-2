@@ -24,7 +24,7 @@ export default function Sidebar() {
             className="md:block text-left md:pb-2 text-slate-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-           Sistema control cuentas
+            Sistema control cuentas
           </span>
           {/* Collapse */}
           <div
@@ -145,26 +145,27 @@ export default function Sidebar() {
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/maps") !== -1
+                    (window.location.href.indexOf("/admin/events-calendar") !==
+                    -1
                       ? "text-sky-500 hover:text-sky-600"
                       : "text-slate-700 hover:text-slate-500")
                   }
-                  to="/admin/maps"
+                  to="/admin/events-calendar"
                 >
                   <i
                     className={
                       "fas fa-map-marked mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/maps") !== -1
+                      (window.location.href.indexOf(
+                        "/admin/events-calendar"
+                      ) !== -1
                         ? "opacity-75"
                         : "text-slate-300")
                     }
                   ></i>{" "}
-                  Maps
+                  Eventos
                 </Link>
               </li>
             </ul>
-
-            
           </div>
         </div>
       </nav>
