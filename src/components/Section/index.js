@@ -112,7 +112,7 @@ export const Section = ({
             </div>
           ))}
         </div>
-        {separator && <hr className="mt-6 border-b-1 border-slate-300" />}
+        {separator && <hr className="mt-3 border-b-1 border-slate-300" />}
       </>
     ));
   };

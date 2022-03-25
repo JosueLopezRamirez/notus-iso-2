@@ -54,7 +54,7 @@ export default function Login() {
               <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
                   <h6 className="text-slate-500 text-sm font-bold">
-                    Sign in with
+                    Iniciar sesion
                   </h6>
                 </div>
                 <hr className="mt-4 border-b-1 border-slate-300" />
@@ -62,7 +62,7 @@ export default function Login() {
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <Input
-                    label="email"
+                    label="Correo"
                     register={register}
                     required
                     name="email"
@@ -70,7 +70,7 @@ export default function Login() {
                   />
 
                   <Input
-                    label="password"
+                    label="Contraseña"
                     type="password"
                     name="password"
                     register={register}
@@ -83,7 +83,7 @@ export default function Login() {
                       className="bg-slate-800 text-white active:bg-slate-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="submit"
                     >
-                      Sign In
+                     Iniciar sesion
                     </button>
                   </div>
                 </form>
@@ -96,12 +96,12 @@ export default function Login() {
                   onClick={(e) => e.preventDefault()}
                   className="text-slate-200"
                 >
-                  <small>Forgot password?</small>
+                  <small>Olvido la contraseña?</small>
                 </a>
               </div>
               <div className="w-1/2 text-right">
                 <Link to="/auth/register" className="text-slate-200">
-                  <small>Create new account</small>
+                  <small>Crear una cuenta</small>
                 </Link>
               </div>
             </div>
