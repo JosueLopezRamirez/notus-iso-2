@@ -201,7 +201,7 @@ export default forwardRef(({ rowData, columnDefs, ...props }, ref) => {
         rowSelection="multiple"
         onGridReady={onGridReady}
         //onFirstDataRendered={onFirstDataRendered}
-        statusBar={statusBar}
+        // statusBar={statusBar}
         containerStyle={{ width: 1200 }}
         {...props.gridOptions}
       />

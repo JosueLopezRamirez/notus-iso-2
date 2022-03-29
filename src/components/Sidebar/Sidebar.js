@@ -24,7 +24,7 @@ export default function Sidebar() {
             className="md:block text-left md:pb-2 text-slate-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            Sistema control cuentas
+            Laboratorio
           </span>
           {/* Collapse */}
           <div
@@ -75,7 +75,7 @@ export default function Sidebar() {
             {/* Navigation */}
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
@@ -95,7 +95,7 @@ export default function Sidebar() {
                   ></i>{" "}
                   Dashboard
                 </Link>
-              </li>
+              </li> */}
 
               <li className="items-center">
                 <Link
@@ -115,7 +115,7 @@ export default function Sidebar() {
                         : "text-slate-300")
                     }
                   ></i>{" "}
-                  Settings
+                  Examen
                 </Link>
               </li>
 
@@ -137,11 +137,11 @@ export default function Sidebar() {
                         : "text-slate-300")
                     }
                   ></i>{" "}
-                  Tables
+                  Usuarios
                 </Link>
               </li>
 
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
@@ -164,7 +164,7 @@ export default function Sidebar() {
                   ></i>{" "}
                   Eventos
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

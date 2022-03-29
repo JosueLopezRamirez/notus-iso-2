@@ -8,27 +8,14 @@ import CardBody from "./CardBody";
 
 const formFields = [
   {
-    title: "Informacion personal",
+    title: "Informacion paciente",
     fields: [
       {
-        name: "username",
-        type: "text",
-        size: "middle",
-        label: "Nombre de usuario",
-        required: true,
-      },
-      {
-        name: "email",
-        type: "text",
-        size: "middle",
-        label: "Correo electronico",
-        required: true,
-      },
-      {
         name: "name",
-        type: "text",
+        type: "select",
         size: "middle",
         label: "Nombre",
+        placeholder: 'Selecciona al paciente',
         required: true,
       },
       {
@@ -36,60 +23,58 @@ const formFields = [
         type: "text",
         size: "middle",
         label: "Apellido",
-        required: true,
+        disabled:true,
+      },
+      {
+        name: "fecha_nacimiento",
+        type: "date",
+        size: "middle",
+        label: "Fecha de nacimiento",
+        disabled:true,
       },
     ],
     separator: true,
   },
   {
-    title: "Informacion de Contacto",
+    title: "Informacion de examen",
     fields: [
       {
-        name: "address",
-        type: "text",
-        size: "middle",
-        label: "Direccion",
-        required: true,
-      },
-      {
-        name: "city",
-        type: "text",
-        size: "middle",
-        label: "Ciudad",
-        required: true,
-      },
-      {
-        name: "country",
+        name: "examen",
         type: "select",
-        size: "small",
-        label: "Pais",
+        size: "middle",
+        label: "Examen",
         required: true,
       },
       {
-        name: "postalCode",
-        type: "text",
-        size: "small",
-        label: "Codigo postal",
-        required: true,
-      },
-      {
-        name: "createdAt",
-        type: "date",
-        size: "small",
-        label: "Fecha de creacion",
+        name: "doctor",
+        type: "select",
+        size: "middle",
+        label: "Doctores",
         required: true,
       },
     ],
     separator: true,
   },
   {
-    title: "Informacion Adicional",
+    title: "Detalle del examen",
     fields: [
       {
         name: "aboutme",
         type: "textarea",
-        label: "Acerca de",
+        label: "Atributo",
         required: true,
+      },
+    ],
+  },
+  {
+    title: "Resultado",
+    fields: [
+      {
+        name: "resultado",
+        type: "textarea",
+        label: "Resultado",
+        required: true,
+        disabled: true
       },
     ],
   },
@@ -110,7 +95,7 @@ export default function CardSettings() {
   const onSubmit = (data) => console.log("data", data);
   return (
     <Card>
-      <CardHeader title="Mi Cuenta" />
+      <CardHeader title="Examen" />
       <CardBody>
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
           <Section

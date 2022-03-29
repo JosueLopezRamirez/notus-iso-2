@@ -32,6 +32,7 @@ export const Section = ({
             register={register}
             name={field.name}
             required={field.required}
+            disabled={field.disabled}
             error={errors[field.name]?.message}
           />
         );
@@ -42,10 +43,12 @@ export const Section = ({
             register={register}
             name={field.name}
             required={field.required}
+            disabled={field.disabled}
             error={errors[field.name]?.message}
           />
         );
       case "select":
+        const placeholder = field.placeholder;
         return (
           <>
             <label className="block uppercase text-slate-600 text-xs font-bold mb-2">
@@ -58,6 +61,7 @@ export const Section = ({
                 return (
                   <Select
                     {...field}
+                    placeholder={placeholder}
                     className="border-0 h-[44px] placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     options={dropdownOptions[field.name]}
                     styles={customStyles}
@@ -69,6 +73,7 @@ export const Section = ({
           </>
         );
       case "date":
+        const disabled = field.disabled;
         return (
           <>
             <label className="block uppercase text-slate-600 text-xs font-bold mb-2">
@@ -83,7 +88,8 @@ export const Section = ({
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
-                    className="border-0 h-[44px] placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    disabled={disabled}
+                    className="border-0 h-[44px] placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 disabled:bg-slate-300"
                   />
                 );
               }}

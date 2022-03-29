@@ -3,32 +3,40 @@ import React, { useEffect, useRef, useState } from "react";
 import Grid from "components/Grid";
 
 const columnDefs = [
-  { field: "make", sortable: true, filter: true },
-  { field: "model", sortable: true, filter: true },
-  { field: "price", sortable: true, filter: true },
-  { field: "price2", sortable: true, filter: true },
-  { field: "price3", sortable: true, filter: true },
-  { field: "price4", sortable: true, filter: true },
+  { field: "nombre", sortable: true, filter: true },
+  { field: "apellido", sortable: true, filter: true },
+  {
+    field: "fechaNacimiento",
+    headerName: "Fecha de Nacimiento",
+    sortable: true,
+    filter: true,
+  },
 ];
 
 export default function Tables() {
-  const [rowData, setRowData] = useState([]);
+  const [rowData, setRowData] = useState([
+    {
+      nombre: "Michael",
+      apellido: "Garcia",
+      fechaNacimiento: "22-10-1995",
+    },
+    {
+      nombre: "Stephanie",
+      apellido: "Silva",
+      fechaNacimiento: "22-10-1995",
+    },
+    {
+      nombre: "Josue",
+      apellido: "Lopez",
+      fechaNacimiento: "22-10-1995",
+    },
+    {
+      nombre: "Shoji",
+      apellido: "Delgado",
+      fechaNacimiento: "22-10-1995",
+    },
+  ]);
   const gridRef = useRef(null);
-
-  useEffect(() => {
-    fetch("https://www.ag-grid.com/example-assets/row-data.json")
-      .then((result) => result.json())
-      .then((rowData) =>
-        setRowData(
-          rowData.splice(0, 25).map((row) => ({
-            ...row,
-            price2: 32000,
-            price3: 32000,
-            price4: 32000,
-          }))
-        )
-      );
-  }, []);
 
   return (
     <>
@@ -42,7 +50,7 @@ export default function Tables() {
               const rows = gridRef.current.getRows();
               console.log({ rows });
             }}
-            removeRow
+            // removeRow
           />
           {/* <CardTable /> */}
         </div>
