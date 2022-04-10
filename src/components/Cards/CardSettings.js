@@ -95,13 +95,15 @@ const formFields = [
   },
 ];
 
-export default function CardSettings() {
+export default function CardSettings({ values = {} }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
-  } = useForm();
+  } = useForm({
+    defaultValues: values,
+  });
 
   const [dropdownOptions] = useState({
     country: [{ label: "Nicaragua", value: "Nicaragua" }],

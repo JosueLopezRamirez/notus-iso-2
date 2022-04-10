@@ -180,7 +180,7 @@ export default forwardRef(({ rowData, columnDefs, ...props }, ref) => {
   return (
     <div
       className="ag-theme-alpine"
-      style={{ height: 600, width: "fit-content" }}
+      style={{ height: 800, width: "fit-content" }}
     >
       <div className="flex">
         {gridButtons.map((button) => (

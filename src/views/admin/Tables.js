@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import Grid from "components/Grid";
+import { useToasts } from "react-toast-notifications";
+import Loader from "components/Loader";
 
 const columnDefs = [
   { field: "make", sortable: true, filter: true },
@@ -13,22 +15,36 @@ const columnDefs = [
 
 export default function Tables() {
   const [rowData, setRowData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { addToast } = useToasts();
   const gridRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://www.ag-grid.com/example-assets/row-data.json")
-      .then((result) => result.json())
-      .then((rowData) =>
-        setRowData(
-          rowData.splice(0, 25).map((row) => ({
-            ...row,
-            price2: 32000,
-            price3: 32000,
-            price4: 32000,
-          }))
-        )
-      );
-  }, []);
+    try {
+      setIsLoading(true);
+      setTimeout(() => {
+        return fetch("https://www.ag-grid.com/example-assets/row-data.json")
+          .then((result) => result.json())
+          .then((rowData) =>{
+            setRowData(
+              rowData.splice(0, 100).map((row) => ({
+                ...row,
+                price2: 32000,
+                price3: 32000,
+                price4: 32000,
+              }))
+            )
+            setIsLoading(false);
+          }
+          );
+      }, 5000);
+    } catch (error) {
+      addToast("Error al cargar la data", { appearance: "error" });
+      setIsLoading(false);
+    }
+  }, [addToast]);
+
+  if (isLoading) return <Loader />;
 
   return (
     <>
@@ -44,7 +60,6 @@ export default function Tables() {
             }}
             removeRow
           />
-          {/* <CardTable /> */}
         </div>
       </div>
     </>

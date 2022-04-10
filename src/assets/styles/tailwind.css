@@ -1051,6 +1051,10 @@ select {
   height: 2.5rem;
 }
 
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .h-600-px {
   height: 600px;
 }
@@ -1516,32 +1520,9 @@ select {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.from-red-400 {
-  --tw-gradient-from: #f87171;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(248 113 113 / 0));
-}
-
-.from-neutral-white {
-  --tw-gradient-from: #FFFFFF;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
-}
-
-.from-slate-200 {
-  --tw-gradient-from: #e2e8f0;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(226 232 240 / 0));
-}
-
 .from-neutral-black {
   --tw-gradient-from: #000000;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 0 0 / 0));
-}
-
-.to-sky-500 {
-  --tw-gradient-to: #0ea5e9;
-}
-
-.to-sky-700 {
-  --tw-gradient-to: #0369a1;
 }
 
 .to-sky-400 {
@@ -1853,6 +1834,10 @@ select {
   font-weight: 400;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1980,6 +1965,11 @@ select {
 .text-lightBlue-300 {
   --tw-text-opacity: 1;
   color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+
+.text-\[\#9013FE\] {
+  --tw-text-opacity: 1;
+  color: rgb(144 19 254 / var(--tw-text-opacity));
 }
 
 .no-underline {
